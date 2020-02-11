@@ -43,24 +43,34 @@ a {
 .username-img-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .card {
   display: flex;
   flex-direction: row;
+  justify-content:stretch;
   height: 250px;
   padding: 48px;
+  width: 55%;
   border: 1px solid seagreen;
+  margin: 0 auto;
  
+}
+
+.calendar {
+  width: 60%;
 }
 
 .card-content{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  margin-left: 150px;
+  width:500px;
+
+
+
 }
 
 .img-cta {

@@ -1,13 +1,16 @@
 import React, { Component } from "react"
-
+import 'github-calendar/dist/github-calendar-responsive.css'
+import GitHubCalandar from 'github-calendar'
 
 class UserCard extends Component {
+    
     render() {
+        // GitHubCalandar('.calendar', this.props.username, {respnsive:true})
         return(
             <div className='card'>
                 <div className='img-cta'>
                 <div className='username-img-wrap'>
-           
+              
                 {this.props.user.company? <h4>{this.props.user.company}</h4> : null}
                     <img src={this.props.user.avatar_url} alt='User Pic' />
                         <h3>{this.props.user.login}</h3>

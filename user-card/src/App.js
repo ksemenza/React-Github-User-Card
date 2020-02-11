@@ -82,7 +82,7 @@ render() {
   <UserCard user={this.state.user}/>
   <div className='calendar'></div>
 
-  <h2 className='subheading'>Followers:</h2>
+  <h1 className='subheading'>Followers</h1>
   <hr/>
   {this.state.followers.map(follower => {
     return (
