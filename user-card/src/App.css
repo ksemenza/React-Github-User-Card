@@ -76,7 +76,7 @@ a {
 .img-cta {
   display: flex;
 }
-img {
+.profile-pic {
   height: 158px;
   width: 158px;
 }
