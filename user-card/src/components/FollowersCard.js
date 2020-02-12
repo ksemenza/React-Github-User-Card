@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import UserCard from './UserCard'
 import 'github-calendar/dist/github-calendar-responsive.css'
-import GitHubCalendar from 'github-calendar'
+import {ImgUser} from '../assets/styled'
+
 
 
 
@@ -40,8 +41,8 @@ class FollowersCard extends Component {
             <UserCard user={this.state.follower} />
      
                        
-   <img className='calendar'
-            src={`http://ghchart.rshah.org/${this.state.follower.login}`}
+   <ImgUser className='calendar'
+            src={`http://ghchart.rshah.org/409ba5/${this.state.follower.login}`}
             alt={`${this.props.login}'s Github chart`}
           />
             </div>
