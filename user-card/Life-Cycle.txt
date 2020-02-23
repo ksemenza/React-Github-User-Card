@@ -1,0 +1,51 @@
+Constructor are built off the Object Oriented Programming principles.  In order to pass data via this.props the function super() must be called to initialize the parent class. The state is changed directly by using this.state but for all other instances you will use this.setState.  An initial state is set through constructor.  If class syntax is not used all calls fields and bind function must be passed as callbacks
+ComponentWillMount has since deprecated due to its behavior when called and its instantiation of order in the call-stack.  While its request is initially before the render it will not be completed prior to render().  It has since been replaced by componentDidMount
+
+componentWillRecieveProps(nextProps)  is used to pass and object map of all props to parent component re-rendering.  All props will be passed even if props have not changed since previous render.  It is associated with states declared by this.setState and will not cause an extra render call.  The nature of all props being passed despite updating will require an if statement to determine if changes occurred.  With React Fiber this function maybe called multiple time prior to render.  
+componentWillReceiveProps(nextProps) {
+if(nextProps.myProp !== this.props.myProps) {
+// nextProps.myProp has a different value than our current prop
+// so we can perform some calculations based on the new value
+}
+}
+This has since been replace by shouldComponentUpdate(nextProps, nextState, nextContext) and will re-render when receiving changes to state or context.  This will be called during update cycle The function is called internally and contains next values props, state, and object and verifies if changes have been made.  It will determine if a re-render is required and if so it will return true other wise false. 
+
+componentWillUpdate (nextProps, nextState) has also deprecated due to its nature of being call multiple times.
+
+Once all the re-rendering cycles have finished componenetDidUpdated(prevProps,prevState,prevContext) is called.  It is called even if no changes have been made due to this behavior it is called multiple times and require a if statement to check if changes have been made.
+componentDidUpdate(prevProps) {
+if(prevProps.myProps !== this.props.myProp) {
+// this.props.myProp has a different value
+// we can perform any operations that would 
+// need the new value and/or cause side-effects 
+// like AJAX calls with the new value - this.props.myProp
+}
+}
+
+Note an exception to the rule of updating the state based on some DOM properties are only computed once (eg position, dimensions of some DOM nodes) Prevent these values from updating or it could result in a render loop.
+
+componentDidCatch(errorString,errorInfo)
+This life-cycle method can react to events happing in child components.  The parent element can handle the errors by -example- setting error info in state and returning message in its render or log to report system
+
+componentDidCatch(errorString, errorInfo) {
+  this.setState({
+    error: errorString
+  });
+  ErrorLoggingTool.log(errorInfo);
+}render() {
+  if(this.state.error) return <ShowErrorMessage error={this.state.error} />
+  return (
+    // render normal component output
+  );
+}
+
+When an error occurs the function will be called in:
+errorString- the .toString() message of error
+errorInfo – an object with a single field componentStack which represents the stack trace back to where the error occurred
+
+componentDidMount this is only called once in the entire life-cycle of a given component.  It is signalized once all the components and sub-components are rendered properly.  This function is ideal for preforming any side-effect causing operation such as AJAX request
+
+componentWillUnmount is used to ‘clean up’ after components using timers(setTimeout, setInterval), open sockets or performs any operation we need to close / remove when no longer needed.
+
+Component Cycle 
+The reason a components might  re-renders is associated with the function that calls it.  With this processing compiling we are able to update certain parts of the component.
