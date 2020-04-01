@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import 'github-calendar/dist/github-calendar-responsive.css'
-import GitHubCalendar from 'github-calendar'
+
 
 class UserCard extends Component {
 
