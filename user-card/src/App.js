@@ -98,13 +98,14 @@ console.log(this.state.username)
         </form>
         <p>{this.state.lookupMessage}</p>
         <UserCard user={this.state.user} />
-        <div className='calendar'>
+        
+        {/* <div className='calendar'> */}
         <img className='calendar'
             src={`http://ghchart.rshah.org/409ba5/${this.state.username}`}
             alt={`${this.state.username}'s Github chart`}
           />
 
-</div>
+{/* </div> */}
         <h1 className="subheading">Followers</h1>
         {this.state.followers.map(follower => {
           return (
