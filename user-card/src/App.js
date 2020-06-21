@@ -87,7 +87,7 @@ console.log(this.state.username)
         </header>
 
         <form onSubmit={this.submitUser}>
-          <label htmlFor="newUser">Find GitHub</label>
+          <label htmlFor="newUser">Search all github profiles</label>
           <input
             type="text"
             name="newUser"

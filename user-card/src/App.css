@@ -12,6 +12,10 @@
 
 }
 
+input#newUser {
+  padding: 5px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -74,7 +78,7 @@ h1 {
 justify-content: center;
   height: 250px;
   padding: 48px;
-  width: 100%;
+  width: 75%;
   border: 1px solid aliceblue;
 margin-top: 25px;
 margin-left: auto;
@@ -86,7 +90,7 @@ box-shadow: 0 0 5px 1px lightgrey;
  
 }
 .calendar {
-  width: 60%;
+  width: 70%;
   padding: 15px;
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
