@@ -73,7 +73,7 @@ class App extends Component {
 
   
   refreshPage() {
-    window.location.reload(false);
+    window.location.reload(true);
   }
   
 
@@ -83,16 +83,17 @@ console.log(this.state.username)
     return (
       <div className="App">
         <header className="app-header">
-          <h1>GitHub Profiles</h1>
+          <h1>Ksemenza Github Overview</h1>
         </header>
 
         <form onSubmit={this.submitUser}>
-          <label htmlFor="newUser">Search all github profiles</label>
+          <label htmlFor="newUser">All github profiles</label>
           <input
             type="text"
             name="newUser"
             id="newUser"
-            placeholder="username"
+            placeholder="search"
+       
           />
           <button type="submit">search</button><button type='reset' onClick={this.refreshPage}>Reset</button>
         </form>

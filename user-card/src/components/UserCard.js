@@ -13,7 +13,7 @@ class UserCard extends Component {
    
                 <div className='img-cta'>
                 <div className='username-img-wrap'>
-                {this.props.user.company? <h4>{this.props.user.company}</h4> : null}
+                {this.props.user.company? <h2>{this.props.user.company}</h2> : null}
                 <h3>{this.props.user.login}</h3>
                     <img className='profile-pic' src={this.props.user.avatar_url} alt='User Pic' />
      
